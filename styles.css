@@ -1,0 +1,749 @@
+@font-face {
+    font-family: montserrat;
+    src: url("E:\frontend project(sheryians)\Golf\Montserrat-VariableFont_wght.ttf");
+}
+body{
+    margin: 0;
+    font-family: montserrat;
+}
+
+#cursor{
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    background-color: #95C11E;
+    z-index: 999;
+    border-radius: 50%;
+    pointer-events: auto;
+    transition: scale 0.2s linear;
+    pointer-events: none;
+}
+#cursor-blur{
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background-color: #95C11E;
+    z-index: 9;
+    border-radius: 50%;
+    opacity: .4;
+    filter: blur(100px);
+    pointer-events: none;
+
+}
+
+#topnav{
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    box-sizing: border-box;
+    height: 30vh;
+    padding-bottom: 10px;
+    background: transparent;
+    justify-content: center;
+}
+
+#nav{
+    z-index: 999;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+}
+
+#navtop{
+    z-index: 999;
+    padding: 0 20px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+    width: 80%;
+}
+
+#navtop img{
+    height: 80px;
+    transition: all 0.5s;
+}
+
+#navtop img:hover{
+    transform: scale(0.9);
+}
+
+#events{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    text-transform: uppercase;
+}
+
+#events h4 {
+    font-weight: 500;
+    font-family: montserrat;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#events h4:hover{
+    color: #b2e722;
+    
+}
+
+#navbottom{
+    display: flex;
+    height: 100%;
+    justify-content: flex-end;
+}
+
+#book{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#book button{
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14vw;
+    height: 90%;
+    border-radius: 30px;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    border: 3px solid #7FB721;
+    transition: all 0.5s;
+}
+
+#book h4{
+    font-weight: 500;
+    font-size: 15px;
+}
+
+#book button:hover {
+    cursor: pointer;
+    background-color: #95C11E;
+    color: black;
+    scale: 0.95;
+}
+
+video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    position: fixed;
+}
+
+#main{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.336);
+    display: flex;
+    z-index: 2;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#page1{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    z-index: 10;
+    position: relative;
+    top: 50px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    color: white;
+}
+
+#page1 h1{
+    z-index: 10;
+    margin: 0;
+    position: relative;
+    font-weight: 850;
+    font-size: 150px;
+    line-height: 0.85;
+    text-align: center;
+}
+
+#page1 h1::before{
+    position: absolute;
+    content: "EAT. DRINK. PLAY.";
+    color: black;
+    top: -4px;
+    left: -15px;
+    -webkit-text-stroke: 2px #7FB721;
+    z-index: -1;
+}
+
+
+#page1 h3{
+    z-index: 10;
+    width: 100%;
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin: 30px 15px 0;
+    color: white;
+}
+
+#page1 h4{
+    z-index: 10;
+    position: relative;
+    width: 65%;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+}
+
+#arrow{
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    font-weight: lighter;
+    position: absolute;
+    left: -200px;
+    bottom: 50px;
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    border: 2px solid #99db27;
+    transition: all 0.3s linear;
+}
+
+#arrow:hover{
+    background-color: #96c11e8b;
+    scale: 0.5;
+}
+
+#page2{
+    top: -50px;
+    height: 100vh;
+    width: 100%;
+    z-index: 10;
+}
+
+#scroller{
+    scroll-behavior: auto;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+}
+
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+
+@keyframes scroll{
+    from{
+        transform: translateX(0);
+    } to {
+        transform: translateX(-100%);
+    }
+}
+
+#scroller1{
+    
+    display: inline-block;
+    white-space: nowrap ;
+    color: black;
+    -webkit-text-stroke: 2px white;
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+#scroller h1{
+    font-weight: 900;
+    margin: 0;
+    margin-right: 40px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 130px;
+    transition: color linear 0.5s;
+}
+
+#scroller h1:hover{
+    color: #7FB721;
+    -webkit-text-stroke: #7FB721;
+}
+
+#page2-second{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#aboutus{
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    height: 100%;
+    width: 80%;
+    color: #fff;
+    display: flex;
+}
+
+#aboutus img{
+    width: 170px;
+    height: 170px;
+    border-radius: 10px;
+}
+
+#abtinfo{
+    gap: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#abtinfo h1{
+    margin: 0;
+    font-size: 50px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+#abtinfo p{
+    font-size: 20px;
+    line-height: 35px;
+    margin: 0;
+}
+
+#page3{
+    width: 100%;
+    position: relative;
+}
+
+#page4{
+    position: relative;
+    width: 100%;
+}
+
+#bgimg{
+    position: absolute;
+    top: -40px;
+    left: 100px;
+    height: 200px;
+    width: 200px;
+}
+
+#cards{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+    margin: 50px 0;
+}
+.card{
+    position: relative;
+    background-color: #fff;
+    height: 80vh;
+    width: 25vw;
+    overflow: hidden;
+    z-index: 11;
+    border-radius: 20px;
+    transition: all linear 0.3s;
+}
+
+#card1{
+    background-image: url("https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer.jpg?strip=all&lossy=1&sharp=1&ssl=1");
+}
+
+#card2{
+    background-image: url("https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4.jpg?strip=all&lossy=1&sharp=1&fit=1024%2C1024&ssl=1");
+}
+
+#card3{
+    background-image: url("https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons.jpg?strip=all&lossy=1&sharp=1&w=1152&ssl=1");
+}
+
+.card h2{
+    position: relative;
+    bottom: 200px;
+    font-size: 44px;
+    color: white;
+    padding-left: 40px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.card p{
+    line-height: 25px;
+    /* opacity: 0; */
+}
+
+#info h1{
+    text-transform: uppercase;
+    font-weight: 800;
+
+    font-size: 44px;
+}
+#info{
+    position: relative;
+    z-index: 10;
+    padding: 100px 20px 20px;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    background-color: #7FB721;
+    opacity: 0;
+    transition: all linear 0.3s;
+}
+
+.card:hover{
+    transform: rotate3d(1, 1, 0, 17deg);
+    #info{
+        opacity: 1;
+    }
+}
+
+#req{
+    position: relative;
+    height: 40vh;
+    background-image: linear-gradient(to bottom left, #1CA237, #B2E623);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+#msg{
+    padding: 40px 150px;
+    text-align: center;
+    line-height: 60px;
+}
+
+#msg h1{
+    font-size: 30px;
+    font-weight: 900;
+}
+
+#req img{
+    position: relative;
+    height: 200%;
+}
+
+#content{
+    position: relative;
+    margin: 80px 120px;
+    height: 70vh;
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+#contentImg{
+    height: 90%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+#contentInfo{
+    display: flex;
+    width: 100%;
+    padding: 20px 20px;
+    padding-left: 150px;
+    box-sizing: border-box;
+    text-align: left;
+    color: white;
+    flex-direction: column;
+}
+
+#contentInfo h1{
+    font-size:50px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+#contentInfo p{
+    font-size: 20px;
+    line-height: 40px;
+}
+
+#contentInfo button{
+    font-size: 16px;
+    font-weight: 500;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14vw;
+    height: 12%;
+    border-radius: 30px;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    border: 3px solid #7FB721;
+    transition: all 0.5s;
+}
+
+
+#contentInfo button:hover {
+    cursor: pointer;
+    background-color: #95C11E;
+    color: black;
+    scale: 0.95;
+}
+
+.contentbgimg   {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    top: 60vh;
+    left: 0;
+}
+
+#quote{
+    position: relative;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10vh;
+}
+
+#quote p{
+    font-size: 1.9rem;
+    font-weight: 900;
+    line-height: 1.66;
+    text-align: center;
+    text-transform: uppercase;
+    width: 60%;
+}
+
+#quote img{
+    position: absolute;
+    height: 60px;
+}
+
+#colon1{
+    left: 170px;
+    top: 0;
+}
+
+#colon2{
+    right: 170px;
+    bottom: 0;
+}
+
+.slideSwap{
+    rotate: -7deg;
+    height: 40vh;
+    width: 99%;
+    margin: 20vh 0;
+    scroll-behavior: auto;
+    white-space: nowrap;
+    overflow-x: auto;
+    position: relative;
+}
+
+.slideSwap::-webkit-scrollbar{
+    display: none;
+}
+
+@keyframes scroll{
+    from{
+        transform: translateX(0);
+    } to {
+        transform: translateX(-100%);
+    }
+}
+
+
+.imgcont{
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.simg{
+    position: relative;
+    display: inline-block;
+    height: 90%;
+    margin: 0 5px;
+}
+
+.simg img{
+    position: relative;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 20px;
+}
+
+#page5{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20vh;
+}
+
+#events{
+    padding: 20px 20px;
+    width: 85%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.event{
+    z-index: 12;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 23vh;
+    width: 25vw;
+    border-radius: 20px;
+    background-color: #B2E724;
+    overflow: hidden;
+}
+
+.event p{
+    transition: all 0.3s linear;
+    z-index: 11;
+    text-transform: uppercase;
+    font-size: 45px;
+    font-weight: 900;
+    text-align: center;
+}
+
+#wait{
+    position: absolute;
+    top: -70px;
+    font-size: 48px;
+}
+
+#wait h1{
+    font-weight: 800;
+    text-transform: uppercase;
+    color: black;
+    -webkit-text-stroke: 1px white;
+    margin: 0;
+}
+
+.event img{
+    border-radius: 20px;
+    opacity: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all 0.3s linear;
+    scale: 1.1;
+}
+
+.event:hover{
+    background-color: transparent;
+    color: white;
+    .eimg{
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+#footer{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 100%;
+    background: linear-gradient(to bottom left, #1CA237, #B2E623);
+}
+
+#fbgimg{
+    position: absolute;
+    left: 0;
+    height: 100%;
+    object-fit: cover;
+}
+
+#finner{
+    height: 50%;
+    width: 80%;
+    position: relative;
+    display: flex;
+}
+
+#flogo{
+    position: relative;
+    width: 18%;
+    transition: all 0.2s linear;
+}
+
+#flogo:hover{
+    scale: 0.9;
+}
+
+#flogo img{
+    height: 50%;
+}
+
+#fevents{
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+}
+
+#fevents h1{
+    margin: 0;
+    width: 50%;
+    text-transform: uppercase;
+    font-size: 37px;
+    font-weight: 900;
+}
+
+#fadd{
+    position: relative;
+    width: 20%;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+#fadd h3{
+    font-size: 25px;
+    font-weight: 800;
+}
+
+#fadd p{
+    margin: 0;
+}
+
+#fbottom{
+    width: 80%;
+}
+
+#fbottom p{
+    display: inline-block;
+}
+
